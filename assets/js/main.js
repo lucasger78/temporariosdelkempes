@@ -313,7 +313,7 @@ checkScroll();
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const formulario = document.getElementById('miFormulario');
+  const formulario = document.getElementById('miFormularioSweetAlert');
 
   formulario.addEventListener('submit', function (event) {
       event.preventDefault();
