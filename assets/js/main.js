@@ -275,12 +275,13 @@ document.addEventListener('DOMContentLoaded', function () {
   myForm.addEventListener('submit', function (event) {
       event.preventDefault(); // Evitar que el formulario se envíe normalmente
 
-      const nombre = myForm.querySelector('[name="nombre"]').value;
-      const email = myForm.querySelector('[name="email"]').value;
-      const asunto = myForm.querySelector('[name="asunto"]').value;
-      const mensaje = myForm.querySelector('[name="mensaje"]').value;
+      const nombre = myForm.querySelector('[name="Nombre"]').value;
+      const email = myForm.querySelector('[name="E-mail"]').value;
+      const telefono = myForm.querySelector('[name="Teléfono"]').value;
+      const asunto = myForm.querySelector('[name="Asunto"]').value;
+      const mensaje = myForm.querySelector('[name="Mensaje"]').value;
 
-      if (!nombre || !email || !asunto || !mensaje) {
+      if (!nombre || !email || !telefono || !asunto || !mensaje) {
           // Si algún campo está vacío, muestra un mensaje de error
           Swal.fire({
               title: 'Error',
