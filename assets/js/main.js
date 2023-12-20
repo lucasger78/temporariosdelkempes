@@ -269,88 +269,88 @@ checkScroll();
 
 //SWEETALERT
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const myForm = document.getElementById('myForm');
-
-//   myForm.addEventListener('submit', function (event) {
-//       event.preventDefault(); // Evitar que el formulario se envíe normalmente
-
-//       const nombre = myForm.querySelector('[name="Nombre"]').value;
-//       const email = myForm.querySelector('[name="E-mail"]').value;
-//       const telefono = myForm.querySelector('[name="Teléfono"]').value;
-//       const asunto = myForm.querySelector('[name="Asunto"]').value;
-//       const mensaje = myForm.querySelector('[name="Mensaje"]').value;
-
-//       if (!nombre || !email || !telefono || !asunto || !mensaje) {
-//           // Si algún campo está vacío, muestra un mensaje de error
-//           Swal.fire({
-//               title: 'Error',
-//               text: 'Por favor, completa todos los campos del formulario.',
-//               icon: 'error',
-//               confirmButtonText: 'OK',
-//               customClass: {
-//                   confirmButton: 'swal-confirm-button-error'
-//               }
-//           });
-//       } else {
-//           // Si todos los campos están llenos, muestra un mensaje de éxito
-//           Swal.fire({
-//               // imageUrl: "img/logo-head.png",
-//               title: 'TEMPORARIOS DEL KEMPES',
-//               text: 'Gracias por tu mensaje.',
-//               icon: 'success',
-//               confirmButtonText: 'OK',
-//               customClass: {
-//                   title: 'swal-title-success',
-//                   text:  'swal-text-success'
-//               }
-//           }).then(() => {
-//               // Después de hacer clic en OK, reinicia el formulario
-//               myForm.reset();
-//           });
-//       }
-//   });
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
-  const formulario = document.getElementById('miFormularioSweetAlert');
+  const myForm = document.getElementById('miFormularioSweetAlert');
 
-  formulario.addEventListener('submit', function (event) {
-      event.preventDefault();
+  myForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Evitar que el formulario se envíe normalmente
 
-      const nombre = formulario.querySelector('[name="Nombre"]').value;
-      const email = formulario.querySelector('[name="E-mail"]').value;
-      const telefono = formulario.querySelector('[name="Teléfono"]').value;
-      const asunto = formulario.querySelector('[name="Asunto"]').value;
-      const mensaje = formulario.querySelector('[name="Mensaje"]').value;
+      const nombre = myForm.querySelector('[name="Nombre"]').value;
+      const email = myForm.querySelector('[name="E-mail"]').value;
+      const telefono = myForm.querySelector('[name="Teléfono"]').value;
+      const asunto = myForm.querySelector('[name="Asunto"]').value;
+      const mensaje = myForm.querySelector('[name="Mensaje"]').value;
 
       if (!nombre || !email || !telefono || !asunto || !mensaje) {
-          mostrarError();
+          // Si algún campo está vacío, muestra un mensaje de error
+          Swal.fire({
+              title: 'Error',
+              text: 'Por favor, completa todos los campos del formulario.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              customClass: {
+                  confirmButton: 'swal-confirm-button-error'
+              }
+          });
       } else {
-          mostrarAgradecimiento();
+          // Si todos los campos están llenos, muestra un mensaje de éxito
+          Swal.fire({
+              // imageUrl: "img/logo-head.png",
+              title: 'TEMPORARIOS DEL KEMPES',
+              text: 'Gracias por tu mensaje.',
+              icon: 'success',
+              confirmButtonText: 'OK',
+              customClass: {
+                  title: 'swal-title-success',
+                  text:  'swal-text-success'
+              }
+          }).then(() => {
+              // Después de hacer clic en OK, reinicia el formulario
+              myForm.reset();
+          });
       }
   });
-
-  function mostrarAgradecimiento() {
-      Swal.fire({
-          title: 'TEMPORARIOS DEL KEMPES',
-          text: 'Mensaje Enviado ¡Muchas Gracias!',
-          icon: 'success',
-          confirmButtonText: 'OK'
-      }).then(() => {
-          formulario.reset();
-      });
-  }
-
-  function mostrarError() {
-      Swal.fire({
-          title: 'Error',
-          text: 'Por favor, completa todos los campos del formulario.',
-          icon: 'error',
-          confirmButtonText: 'OK',
-          customClass: {
-              confirmButton: 'swal-confirm-button-error'
-          }
-      });
-  }
 });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const formulario = document.getElementById('miFormularioSweetAlert');
+
+//   formulario.addEventListener('submit', function (event) {
+//       event.preventDefault();
+
+//       const nombre = formulario.querySelector('[name="Nombre"]').value;
+//       const email = formulario.querySelector('[name="E-mail"]').value;
+//       const telefono = formulario.querySelector('[name="Teléfono"]').value;
+//       const asunto = formulario.querySelector('[name="Asunto"]').value;
+//       const mensaje = formulario.querySelector('[name="Mensaje"]').value;
+
+//       if (!nombre || !email || !telefono || !asunto || !mensaje) {
+//           mostrarError();
+//       } else {
+//           mostrarAgradecimiento();
+//       }
+//   });
+
+//   function mostrarAgradecimiento() {
+//       Swal.fire({
+//           title: 'TEMPORARIOS DEL KEMPES',
+//           text: 'Mensaje Enviado ¡Muchas Gracias!',
+//           icon: 'success',
+//           confirmButtonText: 'OK'
+//       }).then(() => {
+//           formulario.reset();
+//       });
+//   }
+
+//   function mostrarError() {
+//       Swal.fire({
+//           title: 'Error',
+//           text: 'Por favor, completa todos los campos del formulario.',
+//           icon: 'error',
+//           confirmButtonText: 'OK',
+//           customClass: {
+//               confirmButton: 'swal-confirm-button-error'
+//           }
+//       });
+//   }
+// });
