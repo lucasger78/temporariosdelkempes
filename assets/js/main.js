@@ -338,35 +338,50 @@ document.querySelector('form').addEventListener('submit', function (event) {
   })
   .then(response => response.text()) // Cambiado a text() para manejar la respuesta del servidor
   .then(data => {
+    // Limpiar el formulario en ambos casos (éxito o error)
+    form.reset();
+
     // Verificar si la respuesta contiene "success" (indicativo de éxito)
     if (data.includes("success")) {
       // Mostrar SweetAlert de éxito
       Swal.fire({
-        icon: 'success',
-        title: '¡Éxito!',
-        text: 'El formulario se ha enviado correctamente.',
-        confirmButtonText: 'OK',
+      title: 'TEMPORARIOS DEL KEMPES',
+      text: 'Gracias por tu Mensaje',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e82d2d',
+          customClass: {
+              content: 'swal2-text',
+              confirmButton: 'swal2-text2',
+            },
       });
-
-      // Limpiar el formulario
-      form.reset();
     } else {
       // Mostrar SweetAlert de error (sin mensaje de error)
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.',
-        confirmButtonText: 'OK',
+      title: 'TEMPORARIOS DEL KEMPES',
+      text: 'Gracias por tu Mensaje',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e82d2d',
+          customClass: {
+              content: 'swal2-text',
+              confirmButton: 'swal2-text2',
+            },
       });
     }
   })
   .catch(error => {
     // Mostrar SweetAlert de error (con mensaje de error)
     Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.',
-      confirmButtonText: 'OK',
+      title: 'TEMPORARIOS DEL KEMPES',
+      xt: 'Gracias por tu Mensaje',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e82d2d',
+          customClass: {
+              content: 'swal2-text',
+              confirmButton: 'swal2-text2',
+            },
     });
   });
 });
