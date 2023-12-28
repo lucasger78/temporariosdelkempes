@@ -1434,6 +1434,9 @@ section {
   }
 }
 
+
+/* ///////////////EXTRAS//////////// */
+
 /* WHATSAPP */
 
 .whatsapp {
@@ -1500,3 +1503,10 @@ section {
  
 
 /* END WHATSAPP */ 
+
+/* ABOUT MODALIDADES MENU */
+
+.modalidades{
+  background-color: #191919;
+  
+}
