@@ -346,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
               content: 'swal2-text',
               confirmButton: 'swal2-text2',
             },
+      });
     });
   });
 });
