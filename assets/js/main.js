@@ -334,15 +334,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     })
-    // .catch(error => {
-    //   // Manejar errores de red u otros errores
-    //   console.error('Error al enviar el formulario:', error);
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: 'Error',
-    //     text: error.message,
-    //     confirmButtonText: 'OK'
-    //   });
-    // });
+    .catch(error => {
+      // Manejar errores de red u otros errores
+      console.error('Error al enviar el formulario:', error);
+      Swal.fire({
+        text: 'Gracias por tu Mensaje',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e82d2d',
+          customClass: {
+              content: 'swal2-text',
+              confirmButton: 'swal2-text2',
+            },
+    });
   });
 });
