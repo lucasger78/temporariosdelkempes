@@ -290,14 +290,15 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(() => {
       // Mostrar SweetAlert
       Swal.fire({
+        title: 'TEMPORARIOS DEL KEMPES',
         text: 'Gracias por tu Mensaje',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e82d2d',
-          customClass: {
-              content: 'swal2-text',
-              confirmButton: 'swal2-text2',
-            },
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#e82d2d',
+        customClass: {
+          content: 'swal2-text',
+          confirmButton: 'swal2-text2',
+        },
       }).then((result) => {
         if (result.isConfirmed) {
           // Limpiar el formulario
@@ -309,21 +310,24 @@ document.addEventListener('DOMContentLoaded', function () {
       // Manejar errores de red u otros errores
       console.error('Error al enviar el formulario:', error);
       Swal.fire({
+        title: 'TEMPORARIOS DEL KEMPES',
         text: 'Gracias por tu Mensaje',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e82d2d',
-          customClass: {
-              content: 'swal2-text',
-              confirmButton: 'swal2-text2',
-            },
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#e82d2d',
+        customClass: {
+          content: 'swal2-text',
+          confirmButton: 'swal2-text2',
+        },
       });
+    })
+    .finally(() => {
+      // Limpiar el formulario en ambos casos (éxito o error)
+      form.reset();
     });
-  }).finally(() => {
-    // Limpiar el formulario en ambos casos (éxito o error)
-    form.reset();
   });
 });
+
 
 // document.querySelector('form').addEventListener('submit', function (event) {
 //   event.preventDefault();
