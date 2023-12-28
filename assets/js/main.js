@@ -448,30 +448,30 @@ checkScroll();
 //   });
 // });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const form = document.querySelector('form');
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevenir la recarga de la página al enviar el formulario
+//   form.addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevenir la recarga de la página al enviar el formulario
     
-    // Realizar la petición AJAX aquí si es necesario
+//     // Realizar la petición AJAX aquí si es necesario
 
-    // Mostrar SweetAlert
-    Swal.fire({
-      title: 'TEMPORARIOS DEL KEMPES',
-          text: 'Gracias por tu Mensaje',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e82d2d',
-          customClass: {
-              content: 'swal2-text',
-              confirmButton: 'swal2-text2',
-            },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Limpiar el formulario
-        form.reset();
-      }
-    });
-  });
-});
+//     // Mostrar SweetAlert
+//     Swal.fire({
+//       title: 'TEMPORARIOS DEL KEMPES',
+//           text: 'Gracias por tu Mensaje',
+//           icon: 'success',
+//           confirmButtonText: 'OK',
+//           confirmButtonColor: '#e82d2d',
+//           customClass: {
+//               content: 'swal2-text',
+//               confirmButton: 'swal2-text2',
+//             },
+//     }).then((result) => {
+//       if (result.isConfirmed) {
+//         // Limpiar el formulario
+//         form.reset();
+//       }
+//     });
+//   });
+// });
