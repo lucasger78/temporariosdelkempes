@@ -824,7 +824,7 @@ section {
   padding: 15px;
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
+.portfolio .portfolio-item .portfolio-info .details-link_1 h4 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
@@ -841,7 +841,7 @@ section {
 .portfolio .portfolio-item .portfolio-info .details-link {
   position: absolute;
   right: 40px;
-  font-size: 24px;
+  font-size: 15px;
   top: calc(50% - 18px);
   color: #333333;
 }
@@ -853,6 +853,10 @@ section {
 
 .portfolio .portfolio-item .portfolio-info .details-link {
   right: 10px;
+}
+
+.details-link_1{
+  color: #333333;
 }
 
 .portfolio .portfolio-item .portfolio-links {
