@@ -336,10 +336,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
     },
     body: new URLSearchParams(new FormData(form)),
   })
-  .then(response => response.json())
+  .then(response => response.text()) // Cambiado a text() para manejar la respuesta del servidor
   .then(data => {
-    // Verificar si la solicitud fue exitosa
-    if (data.success) {
+    // Verificar si la respuesta contiene "success" (indicativo de éxito)
+    if (data.includes("success")) {
       // Mostrar SweetAlert de éxito
       Swal.fire({
         icon: 'success',
