@@ -269,20 +269,28 @@ checkScroll();
 
 //SWEETALERT
 
-
-
 // document.addEventListener('DOMContentLoaded', function () {
 //   const form = document.querySelector('form');
 
 //   form.addEventListener('submit', function (event) {
 //     event.preventDefault(); // Prevenir la recarga de la página al enviar el formulario
-    
-//     // Realizar la petición AJAX aquí si es necesario
 
-//     // Mostrar SweetAlert
-//     Swal.fire({
-//       title: 'TEMPORARIOS DEL KEMPES',
-//           text: 'Gracias por tu Mensaje',
+//     // Realizar la petición AJAX para enviar el formulario
+//     fetch(form.action, {
+//       method: form.method,
+//       body: new FormData(form),
+//     })
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Hubo un problema al enviar el formulario.');
+//       }
+//       // Asumiendo que tu API devuelve una respuesta vacía si es exitosa
+//       return response.text();
+//     })
+//     .then(() => {
+//       // Mostrar SweetAlert
+//       Swal.fire({
+//         text: 'Gracias por tu Mensaje',
 //           icon: 'success',
 //           confirmButtonText: 'OK',
 //           confirmButtonColor: '#e82d2d',
@@ -290,63 +298,75 @@ checkScroll();
 //               content: 'swal2-text',
 //               confirmButton: 'swal2-text2',
 //             },
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         // Limpiar el formulario
-//         form.reset();
-//       }
+//       }).then((result) => {
+//         if (result.isConfirmed) {
+//           // Limpiar el formulario
+//           form.reset();
+//         }
+//       });
+//     })
+//     .catch(error => {
+//       // Manejar errores de red u otros errores
+//       console.error('Error al enviar el formulario:', error);
+//       Swal.fire({
+//         text: 'Gracias por tu Mensaje',
+//           icon: 'success',
+//           confirmButtonText: 'OK',
+//           confirmButtonColor: '#e82d2d',
+//           customClass: {
+//               content: 'swal2-text',
+//               confirmButton: 'swal2-text2',
+//             },
+//       });
 //     });
 //   });
 // });
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevenir la recarga de la página al enviar el formulario
+document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    // Realizar la petición AJAX para enviar el formulario
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Hubo un problema al enviar el formulario.');
-      }
-      // Asumiendo que tu API devuelve una respuesta vacía si es exitosa
-      return response.text();
-    })
-    .then(() => {
-      // Mostrar SweetAlert
+  // Obtener el formulario
+  const form = event.target;
+
+  // Enviar la solicitud
+  fetch(form.action, {
+    method: form.method,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams(new FormData(form)),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Verificar si la solicitud fue exitosa
+    if (data.success) {
+      // Mostrar SweetAlert de éxito
       Swal.fire({
-        text: 'Gracias por tu Mensaje',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e82d2d',
-          customClass: {
-              content: 'swal2-text',
-              confirmButton: 'swal2-text2',
-            },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Limpiar el formulario
-          form.reset();
-        }
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'El formulario se ha enviado correctamente.',
+        confirmButtonText: 'OK',
       });
-    })
-    .catch(error => {
-      // Manejar errores de red u otros errores
-      console.error('Error al enviar el formulario:', error);
+
+      // Limpiar el formulario
+      form.reset();
+    } else {
+      // Mostrar SweetAlert de error (sin mensaje de error)
       Swal.fire({
-        text: 'Gracias por tu Mensaje',
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e82d2d',
-          customClass: {
-              content: 'swal2-text',
-              confirmButton: 'swal2-text2',
-            },
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.',
+        confirmButtonText: 'OK',
       });
+    }
+  })
+  .catch(error => {
+    // Mostrar SweetAlert de error (con mensaje de error)
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.',
+      confirmButtonText: 'OK',
     });
   });
 });
