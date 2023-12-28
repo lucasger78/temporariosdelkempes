@@ -334,15 +334,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     })
-    .catch(error => {
-      // Manejar errores de red u otros errores
-      console.error('Error al enviar el formulario:', error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: error.message,
-        confirmButtonText: 'OK'
-      });
-    });
+    // .catch(error => {
+    //   // Manejar errores de red u otros errores
+    //   console.error('Error al enviar el formulario:', error);
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Error',
+    //     text: error.message,
+    //     confirmButtonText: 'OK'
+    //   });
+    // });
   });
 });
